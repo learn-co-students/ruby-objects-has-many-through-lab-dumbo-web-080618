@@ -1,0 +1,32 @@
+class Genre
+attr_reader :name
+ @@all = []
+
+ def initialize (name)
+   @name = name
+
+  @@all << self
+end
+
+def new_song(name, artist)
+  Song.new(name,artist,self)
+end
+
+def songs
+  Song.all.select do |song_instance|
+    song_instance.genre == self
+  end
+end
+
+def artists
+  songs.map do |song|
+    song.artist 
+  end
+end
+
+def self.all
+  @@all
+end
+
+
+end
