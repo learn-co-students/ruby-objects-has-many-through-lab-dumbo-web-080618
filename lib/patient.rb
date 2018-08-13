@@ -13,8 +13,8 @@ class Patient
     @@all
   end
 
-  def new_appointment(date, doctor)
-    Appointment.new(date,doctor,self)
+  def new_appointment(doctor, date)
+    Appointment.new(self,doctor,date)
   end
 
   def appointments
@@ -25,7 +25,7 @@ class Patient
   def doctors
     appointments.map do |doc|
       # binding.pry
-      doc.date # this is actually doc variable .doctor but in pry we see it messed it up and date is doctor
+      doc.doctor # this is actually doc variable .doctor but in pry we see it messed it up and date is doctor
     end
   end
 
