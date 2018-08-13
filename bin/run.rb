@@ -5,9 +5,11 @@ require 'pry'
 
 
 jp = Doctor.new("jp")
-patient = Patient.new("joe")
-jan23 = Appointment.new("jan 23", patient, jp)
-oct3 = Appointment.new("oct3", patient, jp)
+joe = Patient.new("joe")
+jane = Patient.new("jane")
+
+jan23 = Appointment.new(jane, jp, "jan23")
+oct3 = Appointment.new(joe, jp, "oct3")
 
 
 
